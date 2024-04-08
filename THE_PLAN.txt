@@ -1,0 +1,12 @@
+
+
+### OUR PLAN ###
+
+
+
+1. Train both models - one on English and one on Russian.
+2. Test both models on a Serbian dataset.
+3. Evaluate the performance using the Span F1.
+4. Compare the metrics and interpret the results.
+5. (Maybe?) Choose other two languages and run the experiment again.
+6. Write the report.
