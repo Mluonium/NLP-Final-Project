@@ -1,0 +1,8 @@
+__pycache__/
+distilbert-base-uncased/runs/
+project/
+*.pyc
+.ipynb_checkpoints/
+*.pdf
+*.iob2
+*.result
