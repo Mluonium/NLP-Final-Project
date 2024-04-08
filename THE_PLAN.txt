@@ -3,7 +3,7 @@
 ### OUR PLAN ###
 
 
-
+(find out about hyperparameters)
 1. Train both models - one on English and one on Russian.
 2. Test both models on a Serbian dataset.
 3. Evaluate the performance using the Span F1.
