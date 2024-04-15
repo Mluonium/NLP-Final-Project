@@ -3,10 +3,9 @@
 ### OUR PLAN ###
 
 
-(find out about hyperparameters)
-1. Train both models - one on English and one on Russian.
-2. Test both models on a Serbian dataset.
+1. Train both models - one on English and one on Polish.
+2. Test both models on a bunch of datasets.
 3. Evaluate the performance using the Span F1.
+    - investigate language similarity measures, pick sth and make plots
 4. Compare the metrics and interpret the results.
-5. (Maybe?) Choose other two languages and run the experiment again.
-6. Write the report.
+5. Write the report.
