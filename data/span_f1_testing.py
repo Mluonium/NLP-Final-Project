@@ -3,7 +3,7 @@ import sys
 def readBIO(path):
     ents = []
     curEnts = []
-    for line in open(path):
+    for line in open(path, encoding = "utf-8"):
         line = line.strip()
         if line == '':
             ents.append(curEnts)
