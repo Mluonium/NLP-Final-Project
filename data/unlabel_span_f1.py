@@ -1,3 +1,5 @@
+import sys
+
 def readBIO(path):
     ents = []
     curEnts = []
@@ -21,12 +23,14 @@ def toSpans(tags):
                 if tags[end][0] != 'I':
                     break
             spans.add(str(beg) + '-' + str(end))
-    #print(spans)
+    # print("spans", spans)
     return spans
 
 def getInstanceScores(predPath, goldPath):
     goldEnts = readBIO(goldPath)
     predEnts = readBIO(predPath)
+    # print("gold", goldEnts)
+    # print("pred", predEnts)
     entScores = []
     tp = 0
     fp = 0
@@ -47,3 +51,14 @@ def getInstanceScores(predPath, goldPath):
     rec = 0.0 if tp+fn == 0 else tp/(tp+fn)
     f1 = 0.0 if prec+rec == 0.0 else 2 * (prec * rec) / (prec + rec)
     return f1
+
+if __name__ == '__main__':
+    if len(sys.argv) < 3:
+        print('Please provide path to gold file and output of your system (in tab-separated format)')
+        print('For example: \npython3 eval.py opener_en-dev.conll bert_out-dev.conll')
+        print()
+        print('The files should be in a conll-like (i.e. tab-separated) format. Each word should be on a separate line, and line breaks are indicated with an empty line. The script will assume to find the BIO annotations on the 3th column. So: index<TAB>word<TAB>label.')
+
+    else:
+        score = getInstanceScores(sys.argv[1], sys.argv[2])
+        print(score)

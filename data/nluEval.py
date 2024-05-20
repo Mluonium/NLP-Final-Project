@@ -4,7 +4,7 @@ def readNlu(path):
     slots = []
     intents = []
     curSlots = []
-    for line in open(path):
+    for line in open(path, encoding = "utf-8"):
         line = line.strip()
         if line.startswith('# intent: '):
             intents.append(line[10:])
@@ -15,6 +15,8 @@ def readNlu(path):
             continue
         else:
             curSlots.append(line.split('\t')[-1])
+    print(slots)
+    print(intents)
     return slots, intents
 
 def toSpans(tags):
